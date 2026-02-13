@@ -136,4 +136,5 @@ This project is [MIT licensed](https://www.google.com/search?q=LICENSE).
 
 ---
 
-**Would you like me to help you design the `schema.prisma` file to link your Products, Cart, and Orders correctly?**
+
+<!-- 1;16;14 time where i have quite the video -->

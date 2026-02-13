@@ -151,9 +151,6 @@ datasource db {
   provider = "postgresql"
 }
 
-// Create Database Schemas
-// User model
-
 enum Role {
   USER
   ADMIN
@@ -183,7 +180,6 @@ model User {
   role         Role    @default(USER)
   refreshToken String?
 
-  //Relations
   orders   Order[]
   carts    Cart[]
   payments Payment[]
@@ -192,7 +188,7 @@ model User {
   updatedAt DateTime @updatedAt
 
   @@index([email])
-  @@map("users") // the name of the table
+  @@map("users")
 }
 
 model Product {
@@ -205,14 +201,12 @@ model Product {
   imageUrl    String?
   isActive    Boolean @default(true)
 
-  // Relations
   orderItems OrderItem[]
   cartItems  CartItem[]
 
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
 
-  // Timestamps
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -220,7 +214,7 @@ model Product {
   @@index([sku])
   @@index([categoryId])
   @@index([isActive])
-  @@map("products") // the name of the table
+  @@map("products")
 }
 
 model Category {
